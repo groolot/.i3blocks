@@ -108,6 +108,11 @@ interval=5
 #
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
+[kernel]
+command=uname -r
+interval=once
+separator=false
+
 [governance]
 command=cat /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
 interval=once
