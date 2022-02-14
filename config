@@ -56,9 +56,15 @@ instance=Master
 interval=once
 signal=10
 
-# Memory usage
+[brightness]
+label=
+command=echo $(( 100 * $(brightnessctl -d '*' -c 'backlight' g) / $(brightnessctl -d '*' -c 'backlight' m) )) '%'
+interval=once
+signal=10
+
+# MEMORY USAGE
 #
-# The type defaults to "mem" if the instance is not specified.
+# THE TYPE DEFAULTS TO "MEM" IF the instance is not specified.
 [memory]
 label=free
 separator=false
@@ -78,12 +84,6 @@ interval=30
 label= /
 instance=/
 interval=30
-separator=false
-
-[disk]
-label= /home
-instance=/home
-interval=30
 
 # Network interface monitoring
 #
@@ -96,11 +96,13 @@ interval=10
 separator=false
 
 [wifi]
-#instance=wlp3s0
+label=
+instance=wlp0s20f3
 interval=10
 separator=false
 
 [bandwidth]
+label=
 #instance=eth0
 interval=5
 
@@ -130,8 +132,13 @@ min_width=100.00%
 #
 # The battery instance defaults to 0.
 [battery]
-label=⚡
-#instance=1
+label=🔋
+instance=0
+interval=30
+
+[battery]
+label=🔋
+instance=1
 interval=30
 
 # Temperature
@@ -140,13 +147,12 @@ interval=30
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [temperature]
-#label=TEMP
-interval=10
+interval=5
 
 # Date Time
 #
 [time]
-command=date '+%Y-%m-%d %H:%M:%S'
+command=date '+#%V %Y-%m-%d %H:%M:%S %Z'
 interval=5
 
 # Generic media player support
