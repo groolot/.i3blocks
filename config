@@ -66,12 +66,12 @@ signal=10
 [memory]
 label=free
 separator=false
-interval=30
+interval=5
 
 [memory]
 label=Swap
 instance=swap
-interval=30
+interval=10
 
 # Disk usage
 #
@@ -90,25 +90,32 @@ interval=30
 [iface]
 #instance=wlan0
 color=#00FF00
-interval=10
+interval=1
 separator=false
 
 [wifi]
 label=
 instance=wlp0s20f3
-interval=10
+interval=1
+separator=false
+
+[iface]
+label=🖧
+instance=p1
+interval=1
 separator=false
 
 [bandwidth]
 label=
 #instance=eth0
-interval=5
+interval=1
 
 # CPU usage
 #
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [kernel]
+label=🌱
 command=uname -r
 interval=once
 separator=false
@@ -132,12 +139,12 @@ min_width=100.00%
 [battery]
 label=🔋
 instance=0
-interval=30
+interval=5
 
 [battery]
 label=🔋
 instance=1
-interval=30
+interval=5
 
 # Temperature
 #
@@ -145,13 +152,13 @@ interval=30
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [temperature]
-interval=5
+interval=10
 
 # Date Time
 #
 [time]
-command=date '+#%V %Y-%m-%d %H:%M:%S %Z'
-interval=5
+command=date '+#%V %Y-%m-%d %H:%M:%S%z'
+interval=1
 
 # Generic media player support
 #
