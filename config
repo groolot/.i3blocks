@@ -53,12 +53,14 @@ signal=11
 command=/usr/local/libexec/i3blocks/volume-pipewire
 interval=once
 signal=10
+color=#ff88ff
 
 [brightness]
 label=
 command=echo $(( 100 * $(brightnessctl -d '*' -c 'backlight' g) / $(brightnessctl -d '*' -c 'backlight' m) )) '%'
 interval=once
 signal=10
+color=#ffff00
 
 # MEMORY USAGE
 #
@@ -104,11 +106,13 @@ label=🖧
 instance=p1
 interval=1
 separator=false
+color=#ff9900
 
 [bandwidth]
 label=
 #instance=eth0
 interval=1
+color=#99ffff
 
 # CPU usage
 #
@@ -156,9 +160,20 @@ interval=10
 
 # Date Time
 #
+[week]
+command=date '+#%V'
+interval=3600
+color=#ff4444
+separator=false
+[date]
+command=date '+%Y-%m-%d'
+interval=600
+color=#ff8800
+separator=false
 [time]
-command=date '+#%V %Y-%m-%d %H:%M:%S%z'
+command=date '+%H:%M:%S%z'
 interval=1
+color=#ffff00
 
 # Generic media player support
 #
