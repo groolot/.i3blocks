@@ -113,6 +113,12 @@ label=
 #instance=eth0
 interval=1
 color=#99ffff
+separator=false
+
+[ping]
+label=
+command=~/.config/i3blocks/ping_internet.sh
+interval=10
 
 # CPU usage
 #
