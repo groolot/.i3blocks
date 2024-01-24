@@ -116,9 +116,8 @@ color=#99ffff
 separator=false
 
 [ping]
-label=
 command=~/.config/i3blocks/ping_internet.sh
-interval=10
+interval=20
 
 # CPU usage
 #
