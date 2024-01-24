@@ -1,32 +1,34 @@
-# i3blocks config file
+# i3blocks configuration file
 #
-# Please see man i3blocks for a complete reference!
-# The man page is also hosted at http://vivien.github.io/i3blocks
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
 #
-# List of valid properties:
-#
-# align
-# color
-# command
-# full_text
-# instance
-# interval
-# label
-# min_width
-# name
-# separator
-# separator_block_width
-# short_text
-# signal
-# urgent
+#     https://vivien.github.io/i3blocks
+
 
 # Global properties
-#
-# The top properties below are applied to every block, but can be overridden.
-# Each block command defaults to the script name to avoid boilerplate.
-command=/usr/share/i3blocks/$BLOCK_NAME
+command=$SCRIPT_DIR/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=10
 markup=none
+separator=true
+
+# [documentation]
+# full_text=Documentation
+# website=https://vivien.github.io/i3blocks
+# command=xdg-open "$website"
+# color=#f12711
+#
+# [greetings]
+# color=#f5af19
+# command=echo "Hello, $USER!"
+# interval=once
+
+# Taskwarrior
+[taskw]
+TASKW_MAX_LENGTH=50
+TASKW_SORT_URGENCY=f
+TASKW_MAIN_FILTER=+to_review
+interval=60
 
 # Key indicators
 #
@@ -38,11 +40,13 @@ markup=none
 instance=CAPS
 interval=once
 signal=11
+markup=pango
 
 [keyindicator]
 instance=NUM
 interval=once
 signal=11
+markup=pango
 
 # Volume indicator
 #
@@ -50,7 +54,6 @@ signal=11
 # The second parameter overrides the mixer selection
 # See the script for details.
 [volume-pipewire]
-command=/usr/local/libexec/i3blocks/volume-pipewire
 interval=once
 signal=10
 color=#ff88ff
@@ -66,12 +69,10 @@ color=#ffff00
 #
 # THE TYPE DEFAULTS TO "MEM" IF the instance is not specified.
 [memory]
-label=free
 separator=false
 interval=5
 
 [memory]
-label=Swap
 instance=swap
 interval=10
 
@@ -86,7 +87,7 @@ instance=/
 interval=30
 
 [usb]
-command=/usr/local/libexec/i3blocks/usb -i nvme0n1p1 -i nvme0n1p2
+IGNORE_LIST=["nvme0n1p1", "nvme0n1p2"]
 markup=pango
 signal=1
 interval=10
@@ -101,10 +102,15 @@ color=#00FF00
 interval=1
 separator=false
 
+[ssid]
+INTERFACE=wlp0s20f3
+interval=60
+separator=false
+
 [wifi]
 label=
 min_width= 100%
-instance=wlp0s20f3
+INTERFACE=wlp0s20f3
 interval=1
 separator=false
 
@@ -116,9 +122,10 @@ separator=false
 color=#ff9900
 
 [bandwidth]
-command=/usr/local/libexec/i3blocks/bandwidth -i '🮷 ' -o '🮸 '
+INLABEL=🠧
+OUTLABEL=🠡
 align=center
-min_width=🮷 ??.?U 🮸 ??.?U
+min_width=🠧??.?U 🠡??.?U
 #instance=eth0
 interval=1
 color=#99ffff
@@ -154,15 +161,9 @@ min_width=100.00%
 # Battery indicator
 #
 # The battery instance defaults to 0.
-[battery]
-label=🔋
-instance=0
-interval=5
-
-[battery]
-label=🔋
-instance=1
-interval=5
+[battery2]
+markup=pango
+interval=30
 
 # Temperature
 #
@@ -190,7 +191,6 @@ interval=1
 color=#ffff00
 
 [dunst]
-command=~/.config/i3blocks/dunst
 interval=once
 format=json
 markup=pango
