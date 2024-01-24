@@ -85,6 +85,12 @@ label= /
 instance=/
 interval=30
 
+[usb]
+command=/usr/local/libexec/i3blocks/usb -i nvme0n1p1 -i nvme0n1p2
+markup=pango
+signal=1
+interval=10
+
 # Network interface monitoring
 #
 # If the instance is not specified, use the interface used for default route.
