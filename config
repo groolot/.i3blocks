@@ -97,6 +97,7 @@ separator=false
 
 [wifi]
 label=
+min_width= 100%
 instance=wlp0s20f3
 interval=1
 separator=false
@@ -109,7 +110,9 @@ separator=false
 color=#ff9900
 
 [bandwidth]
-label=
+command=/usr/local/libexec/i3blocks/bandwidth -i '🮷 ' -o '🮸 '
+align=center
+min_width=🮷 ??.?U 🮸 ??.?U
 #instance=eth0
 interval=1
 color=#99ffff
