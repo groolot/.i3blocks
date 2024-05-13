@@ -188,17 +188,7 @@ interval=once
 format=json
 markup=pango
 
-# Generic media player support
-#
-# This displays "ARTIST - SONG" if a music is playing.
-# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
-#[mediaplayer]
-#instance=spotify
-#interval=5
-#signal=10
-
-# OpenVPN support
-#
-# Support multiple VPN, with colors.
-#[openvpn]
-#interval=20
+[ytdl-mpv]
+markup=pango
+interval=once
+signal=4
