@@ -40,11 +40,6 @@ interval=once
 signal=11
 markup=pango
 
-[keyindicator]
-instance=NUM
-interval=once
-signal=11
-markup=pango
 
 # Volume indicator
 #
