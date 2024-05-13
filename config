@@ -23,12 +23,6 @@ separator=true
 # command=echo "Hello, $USER!"
 # interval=once
 
-# Taskwarrior
-[taskw]
-TASKW_MAX_LENGTH=50
-TASKW_SORT_URGENCY=f
-TASKW_MAIN_FILTER=+to_review
-interval=60
 
 # Key indicators
 #
