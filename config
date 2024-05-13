@@ -78,6 +78,7 @@ interval=10
 label= /
 instance=/
 interval=30
+separator=false
 
 [usb]
 IGNORE_LIST=["nvme0n1p1", "nvme0n1p2"]
@@ -109,7 +110,7 @@ separator=false
 
 [iface]
 label=🖧
-instance=p1
+instance=tailscale0
 interval=1
 separator=false
 color=#ff9900
