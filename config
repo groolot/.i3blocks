@@ -23,6 +23,10 @@ separator=true
 # command=echo "Hello, $USER!"
 # interval=once
 
+[github]
+interval=60
+format=json
+markup=pango
 
 # Key indicators
 #
