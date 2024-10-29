@@ -125,6 +125,13 @@ interval=1
 color=#99ffff
 separator=false
 
+[my-public-ip]
+# markup=pango
+interval=60
+color=#aaffaa
+# public_ip_provider=ip.yunohost.org
+separator=false
+
 [ping]
 interval=10
 
