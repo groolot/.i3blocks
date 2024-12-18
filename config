@@ -50,6 +50,7 @@ markup=pango
 interval=once
 signal=10
 color=#ff88ff
+markup=pango
 
 [brightness]
 label=
