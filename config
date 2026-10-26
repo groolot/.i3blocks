@@ -183,7 +183,7 @@ interval=600
 color=#ff8800
 separator=false
 [time]
-command=date '+%H:%M:%S'
+command=date '+%H:%M:%S%:z'
 interval=1
 color=#ffff00
 
